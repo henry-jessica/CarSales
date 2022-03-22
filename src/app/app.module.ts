@@ -6,8 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from "../environments/environment";
-import { CarlistComponent } from './carlist/carlist.component';
-import { CarComponent } from './car/car.component';
+import { CarlistComponent } from './components/carlist/carlist.component';
+import { CarComponent } from './components/car/car.component';
 
 
 
