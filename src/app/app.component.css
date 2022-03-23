@@ -1,0 +1,12 @@
+.container-fluid-nav div {
+  display: flex;
+  justify-content: space-around;
+}
+.logo{
+    height: 50px;
+    min-width: 156px;
+}
+
+.navbar-white{
+  background-color: white;
+}
