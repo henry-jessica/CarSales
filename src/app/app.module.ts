@@ -8,6 +8,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from "../environments/environment";
 import { CarlistComponent } from './components/carlist/carlist.component';
 import { CarComponent } from './components/car/car.component';
+import { AddCarComponent } from './components/add-car/add-car.component';
 
 
 
@@ -16,7 +17,8 @@ import { CarComponent } from './components/car/car.component';
   declarations: [
     AppComponent,
     CarlistComponent,
-    CarComponent
+    CarComponent,
+    AddCarComponent
   ],
   imports: [
     BrowserModule, 
