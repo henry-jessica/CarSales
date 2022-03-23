@@ -19,5 +19,9 @@ export class CarComponent implements OnInit {
     console.log(this.carData);
     this._carAPIService.delCarData(this.carData.id); 
     return false;
-    }
+  }
+  editCar() {
+     this._carAPIService.editCar(this.carData.id); 
+    return false;
+  }
 }
