@@ -38,10 +38,13 @@ export class CarApiService {
     this.carsDataCollection.add(JSON.parse(JSON.stringify(car))); 
       }
   
- delCarData(carId: any): void{
+ delCarData(carId: string): void{
     this.carsDataCollection.doc(carId).delete(); 
 }
-  
+  editCar(carId: string): void{
+    this.carsDataCollection.doc(carId).update({make: "Test"});
+  }
+
   private handleError(err: HttpErrorResponse) {
     console.log('CarApiService' + err.message); 
     return Observable.create(err.message); 
