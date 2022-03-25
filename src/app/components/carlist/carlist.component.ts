@@ -10,7 +10,7 @@ import { ICar, Car} from '../../interfaces/car';
 })
 export class CarlistComponent implements OnInit {
  
-    carsData!: ICar[];
+    carsData?: ICar[];
   constructor(private _carAPIService:CarApiService) { }
 
   ngOnInit(): void {

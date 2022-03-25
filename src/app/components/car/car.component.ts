@@ -8,10 +8,10 @@ import { CarApiService } from '../../service/car-api-service';
 
 })
 export class CarComponent implements OnInit {
-  @Input() carData!: any; 
+  @Input() carData?: any; 
   carImageWidth: number = 300; 
-  carsData!: ICar[];
-  isEdit!: boolean; 
+  carsData?: ICar[];
+  isEdit?: boolean; 
   constructor(private _carAPIService: CarApiService) { }
   
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class CarComponent implements OnInit {
   updateCar(make: string, model: string, year: string, imageUrl: string): boolean {
     let tempCar: ICar; 
      tempCar = new Car(make, model, year, imageUrl); 
-    this._carAPIService.editCar(this.carData.id,make, model, year, imageUrl); 
+    this._carAPIService.editCar(this.carData?.id,make, model, year, imageUrl); 
       this.isEdit = true; 
       return false;
     }
