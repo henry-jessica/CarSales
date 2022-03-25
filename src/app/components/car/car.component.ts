@@ -21,9 +21,7 @@ export class CarComponent implements OnInit {
     this._carAPIService.delCarData(this.carData.id); 
     return false;
   }
-  editCar() {
-    this.isEdit = true; 
-  }
+
   updateCar(make: string, model: string, year: string, imageUrl: string): boolean {
     let tempCar: ICar; 
      tempCar = new Car(make, model, year, imageUrl); 
