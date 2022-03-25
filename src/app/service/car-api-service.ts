@@ -41,8 +41,8 @@ export class CarApiService {
  delCarData(carId: string): void{
     this.carsDataCollection.doc(carId).delete(); 
 }
-  editCar(carId: string): void{
-    this.carsDataCollection.doc(carId).update({make: "Test"});
+  editCar(carId: string, make:string, model:string, year:string, imageUrl:string): void{
+    this.carsDataCollection.doc(carId).update({make: make, model:model, year:year, imageURL:imageUrl});
   }
 
   private handleError(err: HttpErrorResponse) {
