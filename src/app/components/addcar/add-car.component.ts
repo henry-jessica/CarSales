@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CarApiService } from '../../service/car-api-service';
 import { ICar, Car} from '../../interfaces/car';
 
@@ -9,10 +9,12 @@ import { ICar, Car} from '../../interfaces/car';
 })
 export class AddCarComponent implements OnInit {
 
-  show: boolean = true;
+
   constructor(private _carAPIService:CarApiService) { }
   ngOnInit(): void {
   }
+  @Input() show!: boolean;
+  
   addTheCar(make: string, model: string, year: string, imageUrl: string): boolean{
     let tempCar: ICar; 
     tempCar = new Car(make, model, year, imageUrl); 

@@ -35,6 +35,9 @@
                             <a class="nav-link"
                                href="about.html">Sign up</a>
                         </li>
+                        <button class="btn btn-primary"
+                                (click)="show = !show">{{show? 'Hide':'Add a Car'}}</button>
+
                     </ul>
                 </div>
             </nav>
@@ -43,7 +46,7 @@
 
 </div>
 <div class="container">
-    <app-add-car></app-add-car>
+    <app-add-car [show]="show"></app-add-car>
     <app-carlist></app-carlist>
 </div>
 
