@@ -8,8 +8,8 @@ import { ICar } from '../interfaces/car';
 @Injectable({
   providedIn: 'root'
 })
-export class CarApiService {
-
+  
+export class CarApiService {  
   //service wrapper around the native firestore SDK's 
   //CollectionReference and Query types.
   carsDataCollection!: AngularFirestoreCollection<ICar>; 
@@ -19,6 +19,7 @@ export class CarApiService {
 
   //array to hold all cars
   allCarsData!: ICar[]; 
+  
 
   errorMessage!: string; 
   constructor(private _http: HttpClient, private _afs: AngularFirestore) {
@@ -26,17 +27,28 @@ export class CarApiService {
     this.carsDataCollection = _afs.collection<ICar>("cars_data"); 
   }
   getCarData(): Observable<ICar[]>{
-    this.carsData = this.carsDataCollection.valueChanges(); 
+    this.carsData = this.carsDataCollection.valueChanges({idField:'id'}); 
     this.carsData.subscribe(
       data=>console.log("getCarsData"+JSON.stringify(data))
     )
     return this.carsData; 
   }
-  addCarData(car: ICar): void{
+
+ addCarData(car: ICar): void{
     this.carsDataCollection.add(JSON.parse(JSON.stringify(car))); 
+      }
+  
+ delCarData(carId: string): void{
+    this.carsDataCollection.doc(carId).delete(); 
+}
+  editCar(carId: string, make:string, model:string, year:string, imageUrl:string): void{
+    this.carsDataCollection.doc(carId).update({make: make, model:model, year:year, imageURL:imageUrl});
   }
+
   private handleError(err: HttpErrorResponse) {
     console.log('CarApiService' + err.message); 
     return Observable.create(err.message); 
   }
 }
+
+
