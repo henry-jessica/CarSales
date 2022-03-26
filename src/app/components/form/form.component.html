@@ -1,0 +1,31 @@
+<button class="btn btn-primary"
+        (click)="show = !show">{{show? button1:button2}}</button>
+<div *ngIf="show">
+    <form>
+        <label>Make</label>
+        <input type="text"
+               name="make"
+               placeholder="Enter Make"
+               #make>
+
+        <label>Model</label>
+        <input type="text"
+               name="model"
+               placeholder="Enter Model"
+               #model>
+        <label>Year</label>
+        <input type="text"
+               name="year"
+               placeholder="Enter Year"
+               #year>
+
+        <label>Image</label>
+        <input type="text"
+               name="imageURL"
+               placeholder="Enter Link to Image"
+               #imageUrl>
+
+        <button type="submit"
+                (click)="getEventClick(make.value, model.value, year.value, imageUrl.value)">{{button3}}</button>
+    </form>
+</div>

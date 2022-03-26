@@ -10,6 +10,7 @@ import { CarlistComponent } from './components/carlist/carlist.component';
 import { CarComponent } from './components/car/car.component';
 import { AddCarComponent } from './components/addcar/add-car.component';
 import { EditCarComponent } from './components/editcar/edit-car.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { EditCarComponent } from './components/editcar/edit-car.component';
     CarComponent,
     AddCarComponent,
     EditCarComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule, 
