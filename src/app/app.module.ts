@@ -8,7 +8,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from "../environments/environment";
 import { CarlistComponent } from './components/carlist/carlist.component';
 import { CarComponent } from './components/car/car.component';
-import { AddCarComponent } from './components/addcar/add-car.component';
 import { EditCarComponent } from './components/editcar/edit-car.component';
 import { FormComponent } from './components/form/form.component';
 
@@ -17,7 +16,6 @@ import { FormComponent } from './components/form/form.component';
     AppComponent,
     CarlistComponent,
     CarComponent,
-    AddCarComponent,
     EditCarComponent,
     FormComponent,
   ],

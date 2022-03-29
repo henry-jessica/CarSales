@@ -12,8 +12,8 @@ export class FormComponent implements OnInit {
   
   @Input() show?: boolean; 
   @Input() carData?: any; 
-  @Input() button1?: string; 
-  @Input() button2?: string;
+  // @Input() button1?: string; 
+  // @Input() button2?: string;
   @Input() button3?: string; 
 
   constructor(private _carAPIService:CarApiService) { }
