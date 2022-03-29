@@ -9,14 +9,11 @@ import { ICar, Car } from '../../interfaces/car';
 })
 export class FormComponent implements OnInit {
 
-  
   @Input() show?: boolean; 
   @Input() carData?: any; 
   @Input() BtnCallEvent?: string; 
 
   constructor(private _carAPIService:CarApiService) { }
-
- 
   ngOnInit(): void {
   }
 
