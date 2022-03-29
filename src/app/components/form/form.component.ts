@@ -12,9 +12,7 @@ export class FormComponent implements OnInit {
   
   @Input() show?: boolean; 
   @Input() carData?: any; 
-  // @Input() button1?: string; 
-  // @Input() button2?: string;
-  @Input() button3?: string; 
+  @Input() BtnCallEvent?: string; 
 
   constructor(private _carAPIService:CarApiService) { }
 
