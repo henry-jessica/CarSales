@@ -10,3 +10,21 @@
 .navbar-white{
   background-color: white;
 }
+
+
+body {
+  font-size: 15px;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  background: #ededed;
+  height: 100%;
+  position: relative;
+  color: #3f3f3f;
+  color: rgba(0, 0, 0, .75);
+  min-width: 320px;
+  
+}
+.car-card {
+  background-color: white;
+}
