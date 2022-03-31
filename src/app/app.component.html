@@ -30,13 +30,14 @@
     </header>
     <main>
       <div class="container">
+        <button class="btn btn-primary d-inline" (click)="show = !show">
+          {{ show ? "Cancel" : "Add a new car" }}
+</button>
               <app-form
                 [show]="show"
                 [carData]="null"
                 [BtnCallEvent]="'Save'"></app-form>
-                <button class="btn btn-primary d-inline" (click)="show = !show">
-                            {{ show ? "Cancel1" : "Add a new car" }}
-                </button>
+              
         <app-carlist></app-carlist>
       </div>
     </main>

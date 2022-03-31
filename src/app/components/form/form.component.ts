@@ -14,6 +14,8 @@ export class FormComponent implements OnInit {
   @Input() carData?: any; 
   @Input() BtnCallEvent?: string; 
   MakeCarList?: any[];
+  isValid?: boolean=true;
+
   constructor(private _carAPIService:CarApiService) { }
   ngOnInit(): void {
   this.MakeCarList = this._carAPIService.MakeCarList; 
@@ -21,9 +23,11 @@ export class FormComponent implements OnInit {
 
 
   getEventClick(make: string, model: string, year: string, imageUrl: string, price:string, description:string): boolean{
-    if (!this.carData)
+  
+       if (!this.carData)
       this.addTheCar(make, model, year, imageUrl, price, description); 
     else
+      this.isValid=true; 
       this.updateCar(make, model, year, imageUrl, price, description); 
     return false;
 }
