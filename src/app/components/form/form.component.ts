@@ -23,7 +23,8 @@ export class FormComponent implements OnInit {
 
 
   getEventClick(make: string, model: string, year: string, imageUrl: string, price:string, description:string): boolean{
-  
+    if(!imageUrl)
+       imageUrl="https://assets.donedeal.ie/assets/classifieds/images/motor/new-cars/photos/small/image-coming-soon.png"; 
        if (!this.carData)
       this.addTheCar(make, model, year, imageUrl, price, description); 
     else

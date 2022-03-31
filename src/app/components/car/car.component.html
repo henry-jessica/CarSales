@@ -7,13 +7,13 @@
         </div>
         <div class="col-6 pt-3">
             <div>
-                <h2>{{carData.make}} {{carData.model}}, {{carData.year}}</h2>
+                <h2>{{carData.make}} <small>{{carData.model}} {{carData.year}} </small></h2>
             </div>
             <div class="row">
                 <p>{{carData.description}}</p>
             </div>
             <div class="row">
-                <!-- <h4>€{{(carData?.price | number)|| carData?.price}}</h4> -->
+                <h4 *ngIf="carData?.price">€{{(carData?.price | number)|| carData?.price}}</h4>
                 <div *ngIf="isEdit" class="mt-5 pt-3">
                     <hr>
                     <h5 class="mt-4">Edit car information</h5>
@@ -23,7 +23,6 @@
                 </div>
             </div>
           <div class="row">
-         
           </div>
         </div>
         <div class="col-3">

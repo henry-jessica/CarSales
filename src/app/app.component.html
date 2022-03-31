@@ -2,16 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" 
-          content="IE=edge" />
-    <meta name="viewport" 
-          content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords"
-          content="CloneDeal, buy cars, second hand cars, new cars, cars in Ireland, sell cars"/>
-    <meta name="description" 
-          content="Website Clone of Donedeal - Buy & Sell on Ireland's Largest Motor & Classifieds Marketplace, where more than 3,000,000 daily visitors come to Discover New & Used Cars, Other Motor, Farming and day to day items."/>
-    <meta name="Author" 
-          content="Jessica Henry" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="CloneDeal, buy cars, second hand cars, new cars, cars in Ireland, sell cars"
+    />
+    <meta
+      name="description"
+      content="Website Clone of Donedeal - Buy & Sell on Ireland's Largest Motor & Classifieds Marketplace, where more than 3,000,000 daily visitors come to Discover New & Used Cars, Other Motor, Farming and day to day items."
+    />
+    <meta name="Author" content="Jessica Henry" />
     <title>CloneDeal</title>
   </head>
   <body>
@@ -31,15 +32,19 @@
     <main>
       <div class="container">
         <button class="btn btn-primary d-inline" (click)="show = !show">
-          {{ show ? "Cancel" : "Add a new car" }}
-</button>
-              <app-form
-                [show]="show"
-                [carData]="null"
-                [BtnCallEvent]="'Save'"></app-form>
-              
-        <app-carlist></app-carlist>
+          {{ show ? 'Cancel' : 'Add a new car' }}
+        </button>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+             <app-form
+          [show]="show"
+          [carData]="null"
+          [BtnCallEvent]="'Save'"></app-form>
+        </div>     
       </div>
+              <app-carlist></app-carlist>  
+        </div>
     </main>
   </body>
 </html>
