@@ -28,3 +28,10 @@ body {
 .car-card {
   background-color: white;
 }
+
+.a {
+  display: inline; /* the default for span */
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}

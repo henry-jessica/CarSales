@@ -1,31 +1,95 @@
 <!-- <button class="btn btn-primary"
         (click)="show = !show">{{show? button1:button2}}</button> -->
 <div *ngIf="show">
-       <form>
-              <label>Make</label>
-              <input type="text"
-                     name="make"
-                     placeholder="Enter Make"
-                     #make>
-
-              <label>Model</label>
-              <input type="text"
-                     name="model"
-                     placeholder="Enter Model"
-                     #model>
-              <label>Year</label>
-              <input type="text"
-                     name="year"
-                     placeholder="Enter Year"
-                     #year>
-
-              <label>Image</label>
-              <input type="text"
-                     name="imageURL"
-                     placeholder="Enter Link to Image"
-                     #imageUrl>
-
-              <button type="submit"
-                      (click)="getEventClick(make.value, model.value, year.value, imageUrl.value)">{{BtnCallEvent}}</button>
-       </form>
+  <form class="form-group">
+    <div class="row">
+      <div class="col-3">
+        <label class="required" for="make">Make</label>
+        <select
+          name="make"
+          id="make"
+          class="form-control form-control"
+          id="make"
+          #make>
+          <option disabled selected value="{{carData?.make}}">{{carData?.make ||"Select"}}</option>
+          <option *ngFor="let m of MakeCarList" [value]="m.title" #make>
+            {{ m.title }}
+          </option>
+        </select>
+      </div>
+      <div class="col-2">
+        <label>Model</label>
+        <input
+          type="text"
+          class="form-control form-control"
+          name="model"
+          value="{{carData?.model}}"
+          placeholder="{{ carData?.model }}"
+          #model
+        />
+      </div>
+      <div class="col-2">
+        <label>Year</label>
+        <input
+          type="text"
+          name="year"
+          class="form-control form-control"
+          value="{{carData?.year}}"
+          placeholder="{{ carData?.year}}"
+          #year
+        />
+      </div>
+      <div class="col-2">
+       <label>Price</label>
+       <input
+         type="text"
+         name="price"
+         class="form-control form-control"
+         value="{{carData?.price}}"
+         placeholder="{{ carData?.price }}"
+         #price
+       />
+     </div>
+      <div class="col-3">
+        <label>Image</label>
+        <input
+          type="text"
+          class="form-control form-control"
+          name="imageURL"
+          placeholder="{{ carData?.imageURL }}"
+          value="{{carData?.imageURL}}"
+          #imageUrl
+        />
+      </div>
+      <div class="col-12">
+       <label>Description</label>
+       <textarea  
+       type="text"
+       name="price"
+       class="form-control form-control"
+       value="{{carData?.description}}"
+       placeholder=""
+       #description>
+       </textarea>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <!-- <button class="btn btn-primary d-inline mt-2 " (click)="show = !show">
+          {{ show ? "Cancel2" : "Add a new car" }}
+        </button> -->
+    </div>
+    <div class="col-6 gap-2 d-flex justify-content-end ">
+      
+     <div>
+      <button
+      type="submit"
+      class="btn btn-primary mt-2 d-inline "
+      (click)="getEventClick(make.value, model.value, year.value,imageUrl.value, price.value, description.value)">
+      {{ BtnCallEvent }}
+    </button>
+    </div>
+    </div>
+  </div>
+  </form>
 </div>

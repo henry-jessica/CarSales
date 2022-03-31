@@ -22,10 +22,10 @@ export class CarComponent implements OnInit {
     return false;
   }
 
-  updateCar(make: string, model: string, year: string, imageUrl: string): boolean {
+  updateCar(make: string, model: string, year: string, imageUrl: string, price:string, description:string): boolean {
     let tempCar: ICar; 
-     tempCar = new Car(make, model, year, imageUrl); 
-    this._carAPIService.editCar(this.carData?.id,make, model, year, imageUrl); 
+     tempCar = new Car(make, model, year, imageUrl, price, description); 
+    this._carAPIService.editCar(this.carData?.id,make, model, year, imageUrl, price, description); 
       this.isEdit = true; 
       return false;
     }

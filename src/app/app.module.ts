@@ -9,13 +9,13 @@ import { environment } from "../environments/environment";
 import { CarlistComponent } from './components/carlist/carlist.component';
 import { CarComponent } from './components/car/car.component';
 import { FormComponent } from './components/form/form.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     CarlistComponent,
     CarComponent,
     FormComponent,
+
   ],
   imports: [
     BrowserModule, 

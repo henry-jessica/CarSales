@@ -1,0 +1,16 @@
+/* textarea{ 
+    width: 200px; 
+    min-width:200px; 
+    max-width:200px; 
+  
+    height:200px; 
+    min-height:200px;  
+    max-height:200px;
+  } */
+
+.a {
+    display: inline; /* the default for span */
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+  }
