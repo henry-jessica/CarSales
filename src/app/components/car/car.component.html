@@ -22,7 +22,8 @@
                 <app-form [show]="isEdit"
                           [carData]="carData"
                           [BtnName]="'Update'"
-                          (goBack)="goBack()"></app-form>
+                          (cancel)="cancel()"
+                          (confirm)="confirm()"></app-form>
             </div>
           </div>
         </div>

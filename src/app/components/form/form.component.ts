@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CarApiService} from '../../service/car-api-service';
 import { ICar, Car } from '../../interfaces/car';
 import { importType } from '@angular/compiler/src/output/output_ast';
+import { outputAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-form',
@@ -14,10 +15,12 @@ export class FormComponent implements OnInit {
   @Input() carData?: any; 
   @Input() BtnName?: string; 
   @Input() title?: string; 
-  @Output() goBack: EventEmitter<null> = new EventEmitter<null>();
+  @Output() cancel: EventEmitter<null> = new EventEmitter<null>();
+  @Output() confirm: EventEmitter<null>=new EventEmitter<null>(); 
   
   MakeCarList?: any[];
   isValid?: boolean=true;
+  standardImage:string="https://assets.donedeal.ie/assets/classifieds/images/motor/new-cars/photos/small/image-coming-soon.png"; 
 
   constructor(private _carAPIService:CarApiService) { }
   ngOnInit(): void {
@@ -27,12 +30,14 @@ export class FormComponent implements OnInit {
 
   getEventClick(make: string, model: string, year: string, imageUrl: string, price:string, description:string): boolean{
     if(!imageUrl)
-       imageUrl="https://assets.donedeal.ie/assets/classifieds/images/motor/new-cars/photos/small/image-coming-soon.png"; 
+       imageUrl = this.standardImage; 
        if (!this.carData)
       this.addTheCar(make, model, year, imageUrl, price, description); 
-    else
-      this.isValid=true; 
+    else{
+       this.isValid=true; 
       this.updateCar(make, model, year, imageUrl, price, description); 
+    }
+    this.Confirm(); 
     return false;
 }
     addTheCar(make: string, model: string, year: string, imageUrl: string, price:string, description:string): boolean{
@@ -40,6 +45,7 @@ export class FormComponent implements OnInit {
     tempCar = new Car(make, model, year, imageUrl, price, description); 
     this._carAPIService.addCarData(tempCar); 
     console.log(this.MakeCarList);
+
     return false;
   }
 
@@ -49,7 +55,10 @@ export class FormComponent implements OnInit {
       this.show = true; 
       return false;
     }
-    abandon() {
-      this.goBack.emit();
+    Cancel() {
+      this.cancel.emit();
+    }
+    Confirm(){
+      this.confirm.emit(); 
     }
 }
