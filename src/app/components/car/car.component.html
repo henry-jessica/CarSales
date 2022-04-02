@@ -1,41 +1,61 @@
 <div class="container p-2">
-    <div class="row border bg-light rounded p-2">
-        <div class="col-3">
-            <img src="{{carData.imageURL}}"
-                 [style.width.px]="carImageWidth"
-                 alt="{{carData.imageURL}}">
-        </div>
-        <div class="col-6 pt-3">
-            <div>
-                <h2>{{carData.make}} <small>{{carData.model}} {{carData.year}} </small></h2>
-            </div>
-            <div class="row">
-                <p>{{carData.description}}</p>
-            </div>
-            <div class="row">
-                <h4 *ngIf="carData?.price">€{{(carData?.price | number)}}</h4>
-            </div>
-          <div class="row">
-            <div *ngIf="isEdit" class="mt-5 pt-3">
-                <hr>
-                <h5 class="mt-4">Edit car information</h5>
-                <app-form [show]="isEdit"
-                          [carData]="carData"
-                          [BtnName]="'Update'"
-                          (cancel)="cancel()"
-                          (confirm)="confirm()"></app-form>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-            <div class="row gap-2 d-flex justify-content-end p-3">
-                    <button type="submit"
-                            class="btn btn-danger w-50"
-                            (click)="deleteCar()">Delete
-                </button> 
-                    <button class="btn btn-outline-info w-50 mt-1"
-                            (click)="isEdit = !isEdit">{{isEdit? "Cancel":"Edit"}}</button>
-            </div>
-        </div>
+  <div class="row border bg-light rounded p-2">
+    <div class="col-3">
+      <img
+        src="{{ carData.imageURL }}"
+        [style.width.px]="carImageWidth"
+        alt="{{ carData.imageURL }}"
+      />
     </div>
+    <div class="col-6 pt-3">
+      <div>
+        <h2>
+          {{ carData.make }}
+          <small>{{ carData.model }} {{ carData.year }} </small>
+        </h2>
+      </div>
+      <div class="row">
+        <p>{{ carData.description }}</p>
+      </div>
+      <div class="row">
+        <h4 *ngIf="carData?.price">€{{ carData?.price }}</h4>
+      </div>
+      <div class="row">
+        <div *ngIf="isEdit" class="mt-5 pt-3">
+          <hr />
+          <h5 class="mt-4">Edit car information</h5>
+          <app-form
+            [show]="isEdit"
+            [carData]="carData"
+            [BtnName]="'Update'"
+            (cancel)="cancel()"
+            (confirm)="confirm()"
+          ></app-form>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="row gap-2 d-flex justify-content-end p-3">
+        <button *ngIf="!displayDeleteMessage" type="submit" class="btn btn-danger w-50" (click)="message()">
+          Delete
+        </button>
+        <div *ngIf="displayDeleteMessage">
+          <h4>Are you sure you wanna delete this car?</h4>
+          <button (click)="cancel()" class="btn btn-outline-danger w-25 m-2">
+            No
+          </button>
+          <button class="btn btn-outline-success w-25 m-2" (click)="deleteCar()">Yes</button>
+          <!-- <div class="alert alert-success" role="alert">
+            <h4>Car Deleted successfully</h4>
+          </div> -->
+        </div>
+
+        <button *ngIf="!displayDeleteMessage"
+          class="btn btn-outline-info w-50 mt-1"
+          (click)="isEdit = !isEdit">
+          {{ isEdit ? "Cancel" : "Edit" }}
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

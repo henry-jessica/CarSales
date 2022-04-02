@@ -12,11 +12,16 @@ export class CarComponent implements OnInit {
   carImageWidth: number = 300; 
   carsData?: ICar[];
   isEdit?: boolean; 
+  displayDeleteMessage?: boolean = false;
   constructor(private _carAPIService: CarApiService) { }
   
   ngOnInit(): void {
   }
-  deleteCar() {
+  message() {
+     this.displayDeleteMessage = true; 
+     return false;
+  }
+  deleteCar(){
     console.log(this.carData);
     this._carAPIService.delCarData(this.carData.id); 
     return false;
@@ -30,6 +35,7 @@ export class CarComponent implements OnInit {
       return false;
     }
     cancel(){
+      this.displayDeleteMessage=false; 
       this.isEdit = false; 
     }
     confirm(){

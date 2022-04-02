@@ -12,10 +12,12 @@ export class AppComponent {
   
   cancel(){
     this.show = false; 
+    this.displaySucessMessage=false; 
   }
   confirm(){
     this.show=false; 
     this.displaySucessMessage=true; 
+    
   }
 
 }
