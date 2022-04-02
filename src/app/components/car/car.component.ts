@@ -29,4 +29,8 @@ export class CarComponent implements OnInit {
       this.isEdit = true; 
       return false;
     }
+    goBack(){
+      this.isEdit = false; 
+    }
+    
 }

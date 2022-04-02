@@ -13,6 +13,7 @@ export class FormComponent implements OnInit {
   @Input() show?: boolean; 
   @Input() carData?: any; 
   @Input() BtnName?: string; 
+  @Input() title?: string; 
   @Output() goBack: EventEmitter<null> = new EventEmitter<null>();
   
   MakeCarList?: any[];
