@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CarApiService} from '../../service/car-api-service';
 import { ICar, Car } from '../../interfaces/car';
 import { importType } from '@angular/compiler/src/output/output_ast';
@@ -12,7 +12,9 @@ export class FormComponent implements OnInit {
 
   @Input() show?: boolean; 
   @Input() carData?: any; 
-  @Input() BtnCallEvent?: string; 
+  @Input() BtnName?: string; 
+  @Output() goBack: EventEmitter<null> = new EventEmitter<null>();
+  
   MakeCarList?: any[];
   isValid?: boolean=true;
 
@@ -45,5 +47,8 @@ export class FormComponent implements OnInit {
     this._carAPIService.editCar(this.carData?.id,make, model, year, imageUrl, price, description); 
       this.show = true; 
       return false;
+    }
+    abandon() {
+      this.goBack.emit();
     }
 }

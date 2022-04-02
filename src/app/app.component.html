@@ -25,25 +25,29 @@
               class="logo"
               alt="CloneDeal Logo"
             />
+            <div *ngIf="!show">
+               <button class="btn btn-primary d-inline" (click)="show = !show" >
+                    Place Add
+               </button>
+          </div>
           </nav>
         </div>
       </div>
     </header>
     <main>
       <div class="container">
-        <button class="btn btn-primary d-inline" (click)="show = !show">
-          {{ show ? 'Cancel' : 'Add a new car' }}
-        </button>
+      
       <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-             <app-form
+    <app-form
           [show]="show"
           [carData]="null"
-          [BtnCallEvent]="'Save'"></app-form>
+          [BtnName]="'Save'"
+          (goBack)="goBack()"></app-form>
         </div>     
       </div>
-              <app-carlist></app-carlist>  
+          <app-carlist></app-carlist>  
         </div>
     </main>
   </body>

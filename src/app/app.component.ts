@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'CarSales';
   show!: boolean;
+
+  goBack(){
+    this.show = false; 
+  }
 }
