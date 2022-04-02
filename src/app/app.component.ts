@@ -10,7 +10,6 @@ export class AppComponent {
   show!: boolean;
   displaySucessMessage: boolean=false;
   
-
   cancel(){
     this.show = false; 
   }
@@ -18,4 +17,5 @@ export class AppComponent {
     this.show=false; 
     this.displaySucessMessage=true; 
   }
+
 }
