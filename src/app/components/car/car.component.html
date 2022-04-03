@@ -42,10 +42,11 @@
         </button>
         <div *ngIf="displayDeleteMessage">
           <h4>Are you sure you wanna delete this car?</h4>
+          <button class="btn btn-outline-success w-25 m-2" (click)="deleteCar()">Yes</button>
+
           <button (click)="cancel()" class="btn btn-outline-danger w-25 m-2">
             No
           </button>
-          <button class="btn btn-outline-success w-25 m-2" (click)="deleteCar()">Yes</button>
           <!-- <div class="alert alert-success" role="alert">
             <h4>Car Deleted successfully</h4>
           </div> -->
