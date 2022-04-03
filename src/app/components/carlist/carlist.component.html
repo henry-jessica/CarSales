@@ -1,6 +1,10 @@
-<div class="container">
-       <div class='container'>
-              <app-car *ngFor="let carData of carsData"
-                       [carData]="carData"></app-car>
-       </div>
+<div class="container  p-4 border border-gray rounded">
+    <h2>Cars for sale</h2>
+    <!-- DISPLAY CAR -->
+    <div class="col-12 p-2"><app-car *ngFor="let carData of carsData"
+                       [carData]="carData"></app-car></div> 
+    <!-- CHECK IF LIST IS EMPTY DISPLAY MESSAGE -->
+    <div *ngIf="carsData?.length===0">
+        <p>No cars to display</p>
+    </div>
 </div>

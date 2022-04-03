@@ -1,17 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-html {
-  font-size: 15px;
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;
-  background: #ededed;
-  height: 100%;
-  position: relative;
-  color: #3f3f3f;
-  color: rgba(0, 0, 0, .75);
-  min-width: 320px;
-}
-.car-card {
-  background-color: white;
-}
+body {
+    font-size: 15px;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    background: #ededed;
+    height: 100%;
+    position: relative;
+    color: #3f3f3f;
+    color: rgba(0, 0, 0, .75);
+    min-width: 320px;
+}  
+
+.required {
+    position: relative;
+      content: " *";
+      color: red;
+      background-color: red;
+  }

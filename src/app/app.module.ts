@@ -8,16 +8,14 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from "../environments/environment";
 import { CarlistComponent } from './components/carlist/carlist.component';
 import { CarComponent } from './components/car/car.component';
-import { EditCarComponent } from './components/editcar/edit-car.component';
 import { FormComponent } from './components/form/form.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     CarlistComponent,
     CarComponent,
-    EditCarComponent,
     FormComponent,
+
   ],
   imports: [
     BrowserModule, 

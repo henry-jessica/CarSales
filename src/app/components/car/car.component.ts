@@ -12,21 +12,32 @@ export class CarComponent implements OnInit {
   carImageWidth: number = 300; 
   carsData?: ICar[];
   isEdit?: boolean; 
+  displayDeleteMessage?: boolean = false;
   constructor(private _carAPIService: CarApiService) { }
   
   ngOnInit(): void {
   }
-  deleteCar() {
+  message() {
+     this.displayDeleteMessage = true; 
+     return false;
+  }
+  deleteCar(){
     console.log(this.carData);
     this._carAPIService.delCarData(this.carData.id); 
     return false;
   }
 
-  updateCar(make: string, model: string, year: string, imageUrl: string): boolean {
-    let tempCar: ICar; 
-     tempCar = new Car(make, model, year, imageUrl); 
-    this._carAPIService.editCar(this.carData?.id,make, model, year, imageUrl); 
+  updateCar(make: string, model: string, year: string, imageUrl: string, price:string, description:string): boolean {
+    this._carAPIService.editCar(this.carData?.id,make, model, year, imageUrl, price, description); 
       this.isEdit = true; 
       return false;
     }
+    cancel(){
+      this.displayDeleteMessage=false; 
+      this.isEdit = false; 
+    }
+    confirm(){
+      this.isEdit = true; 
+    }
+    
 }
