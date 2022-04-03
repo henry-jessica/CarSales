@@ -1,17 +1,18 @@
 <div class="container p-2">
   <div class="row border bg-light rounded p-2">
-    <div class="col-3">
+    <div class="col-lg-3 col-12">
       <img
         src="{{ carData.imageURL }}"
         [style.width.px]="carImageWidth"
         alt="{{ carData.imageURL }}"
       />
     </div>
-    <div class="col-6 pt-3">
+    <div class="col-lg-6 col-12 pt-3">
       <div>
         <h2>
           {{ carData.make }}
-          <small>{{ carData.model }} {{ carData.year }} </small>
+          <small>{{ carData.model }} </small>
+          <p class="detail">{{ carData.year }}</p>
         </h2>
       </div>
       <div class="row">
@@ -34,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-12">
       <div class="row gap-2 d-flex justify-content-end p-3">
         <button *ngIf="!displayDeleteMessage" type="submit" class="btn btn-danger w-50" (click)="message()">
           Delete
